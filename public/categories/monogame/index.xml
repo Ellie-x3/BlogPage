@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MonoGame on Ellie Makes Games</title>
+    <link>http://localhost:1313/categories/monogame/</link>
+    <description>Recent content in MonoGame on Ellie Makes Games</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Mar 2024 21:59:13 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/monogame/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/my-first-post/</link>
+      <pubDate>Thu, 14 Mar 2024 21:59:13 -0300</pubDate>
+      <guid>http://localhost:1313/my-first-post/</guid>
+      <description>Test Content&#xA;public static readonly JsonSerializerOptions? SerializerOptions = new() { Converters = { new JsonStringEnumConverter(), new ColorConvertor(), new Vector2Converter() }, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull, ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, }; </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,9 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Ellie Makes Games'
+
+paginate = 3
+
+[params]
+    dateFormat = "Jan 2, 2006"
+    description = "Game Dev Blog In MonoGame"

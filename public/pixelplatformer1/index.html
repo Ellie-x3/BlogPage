@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="description" content=We&#32;will&#32;go&#32;through&#32;and&#32;install&#32;monogame&#32;and&#32;create&#32;our&#32;first&#32;window!>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pixel Platformer Part 1</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+    <div class="logo">
+        <a href="/">EllieBlog</a>
+    </div>
+    <div class="links">
+        <a href="/">HomePage</a>
+        <a href="/categories">Categories</a>
+    </div>
+</nav>
+
+        
+
+<div class="single">
+    <div class="singleHead">
+        <div class="singleHeadTexts">
+            <h1 class="singleHeadTitle">Pixel Platformer Part 1</h1>
+            <p class="singleHeadDescription">We will go through and install monogame and create our first window!</p>
+            <div class="singleHeadDetail">
+                <span class="singleAuthor">Ellie</span>
+
+                
+                    <a href=http://localhost:1313/categories/monogame/ class="singleCategory">MonoGame</a>
+                
+                    <a href=http://localhost:1313/categories/csharp/ class="singleCategory">CSharp</a>
+                
+                    <a href=http://localhost:1313/categories/pixelplatformer/ class="singleCategory">PixelPlatformer</a>
+                
+            </div>
+            <time> Mar 14, 2024 </time>
+        </div>
+    </div>
+
+    <div class="singleBottom">
+        <div class="singleContent"><h1 id="monogame-setup">MonoGame Setup</h1>
+<p>First we will need to go through the installation steps for <a href="https://monogame.net/"><strong>MonoGame</strong></a> Steps: <a href="https://monogame.net/articles/getting_started/index.html">Here</a></p>
+<p>This Guide will be for MonoGame on Windows but there is steps in the documentation for other platforms.
+I will quickly go through the steps but I highly encourage going through the documentation yourself aswell.</p>
+<p>First we will install <a href="https://visualstudio.microsoft.com/vs/">Visual Studio</a> - This will help speed up the install process</p>
+<p>When installing make sure to select the correct .NET options</p>
+<p><img src="https://monogame.net/articles/getting_started/images/1_installer_vs_components.png" alt="alt text" title="Install selections"></p>
+<p>Once Visual Studio is installed we will install the monogame templates.</p>
+<ol>
+<li>Launch VS 2022</li>
+<li>Select the &ldquo;Continue Without Code&rdquo; option</li>
+<li>At the top of your screen select &ldquo;extensions&rdquo; tab and then &ldquo;Manage Extensions&rdquo;</li>
+<li>In the search box search for &ldquo;MonoGame&rdquo; and install the c# project templates</li>
+</ol>
+<p>You may be prompted to install it and close VS 2022 to proceed.</p>
+<p>This will allow us to now use Visual Studio to create our game by selecting the template</p>
+<p><img src="https://monogame.net/articles/getting_started/images/vswin_mg_new_2.png" alt="alt text" title="Template"></p>
+<h2 id="other-dev-environments"><strong>OTHER DEV ENVIRONMENTS</strong></h2>
+<p>If you prefer using Jetbrains Rider or Visual Studio Code (Like Myself) we will need to install the .NET SDK
+<a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">Here</a></p>
+<p>Download the latest SDK for your operating system to continue</p>
+<p>Once installed you should now have a new command tool. Run the following commands in your command prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>    dotnet --version
+</span></span></code></pre></div><p>Note you may need to close and re-open command prompt if previously opened.</p>
+<p>Now that you have dotnet installed. You can create a project with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>    dotnet <span style="color:#66d9ef">new</span> --install MonoGame.Templates.CSharp
+</span></span><span style="display:flex;"><span>    dotnet <span style="color:#66d9ef">new</span> mgdesktopgl -o PixelPlatformer
+</span></span></code></pre></div><p>Where -o is the project directory it will create.</p>
+<h1 id="project-has-beed-made">Project has beed made</h1>
+<p>Now that you successfully created your project with either VS 2022 Tempplates or via dotnet we will check out the code.</p>
+<p>Firstly the files it created: Most of these we can ignore for now</p>
+<p><img src="filesystem" alt="alt text">
+[filesystem]: D:/blog/quickstart/static/images/pp1/filesystem.png &ldquo;fs&rdquo;</p>
+</div>
+    </div>
+</div>
+
+
+
+        <div class="footer">
+    <div class="footerLinks">
+        <a href="/">Ellie Blog</a> |
+        <a href="/categories">Categories</a> |
+        <a href="/sitemap.xml">Sitemap</a>
+    </div>
+</div>
+    </div>
+</body>
+</html>
