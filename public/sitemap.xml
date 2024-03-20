@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/csharp/</loc>
+    <loc>http://localhost:1313/categories/csharp/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/monogame/</loc>
+    <loc>http://localhost:1313/categories/monogame/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/pixelplatformer1/</loc>
+    <loc>http://localhost:1313/pixelplatformer1/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/pixelplatformer/</loc>
+    <loc>http://localhost:1313/categories/pixelplatformer/</loc>
     <lastmod>2024-03-14T21:59:13-03:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

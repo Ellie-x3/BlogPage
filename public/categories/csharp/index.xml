@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSharp on Ellie Makes Games</title>
-    <link>https://example.org/categories/csharp/</link>
+    <link>http://localhost:1313/categories/csharp/</link>
     <description>Recent content in CSharp on Ellie Makes Games</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Mar 2024 21:59:13 -0300</lastBuildDate>
-    <atom:link href="https://example.org/categories/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/csharp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pixel Platformer Part 1</title>
-      <link>https://example.org/pixelplatformer1/</link>
+      <link>http://localhost:1313/pixelplatformer1/</link>
       <pubDate>Thu, 14 Mar 2024 21:59:13 -0300</pubDate>
-      <guid>https://example.org/pixelplatformer1/</guid>
-      <description>MonoGame Setup First we will need to go through the installation steps for MonoGame Steps: Here&#xA;This Guide will be for MonoGame on Windows but there is steps in the documentation for other platforms. I will quickly go through the steps but I highly encourage going through the documentation yourself aswell.&#xA;First we will install Visual Studio - This will help speed up the install process&#xA;When installing make sure to select the correct .</description>
+      <guid>http://localhost:1313/pixelplatformer1/</guid>
+      <description>MonoGame Setup MEOWww w First we will need to go through the installation steps for MonoGame Steps: Here&#xA;This Guide will be for MonoGame on Windows but there is steps in the documentation for other platforms. I will quickly go through the steps but I highly encourage going through the documentation yourself aswell.&#xA;First we will install Visual Studio - This will help speed up the install process&#xA;When installing make sure to select the correct .</description>
     </item>
   </channel>
 </rss>
