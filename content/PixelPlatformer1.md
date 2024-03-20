@@ -12,8 +12,8 @@ authors = ["Ellie"]
 
 # MonoGame Setup
 
-MEOW
-
+MEOWww
+w
 First we will need to go through the installation steps for [**MonoGame**](https://monogame.net/) Steps: [Here](https://monogame.net/articles/getting_started/index.html)
 
 This Guide will be for MonoGame on Windows but there is steps in the documentation for other platforms.
