@@ -41,8 +41,10 @@ a{
     align-items: center;
     height: 100px;
     position: sticky;
+    width: 100%;
     top: 0px;
     background-color: var(--bg);
+    
 }
 
 .logo{
@@ -205,6 +207,7 @@ a{
 .singleContent{
     font-size: 20px;
     line-height: 32px;
+    width: 100%;
 }
 
 .singleContent p,
@@ -214,6 +217,11 @@ a{
     margin: 20px 0px;
 }
 
+.singleContent p{
+    font-weight: 100;
+    font-size: 20px;
+}
+
 .singleContent img{
     width: 100%;
     object-fit: cover;
@@ -221,10 +229,19 @@ a{
 
 .singleContent pre{
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 20px;
+    font-weight: 200;
+    font-size: 18px;
 }
+
 /*SINGLE END*/
+
+/*IMAGES*/
+img[alt=filesystempng] {
+    width: 500px;
+}
+/*IMAGES*/
 
 @media (max-width: 1536px) {
     .container{

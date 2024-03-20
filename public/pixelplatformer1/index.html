@@ -59,7 +59,7 @@ I will quickly go through the steps but I highly encourage going through the doc
 </ol>
 <p>You may be prompted to install it and close VS 2022 to proceed.</p>
 <p>This will allow us to now use Visual Studio to create our game by selecting the template</p>
-<p><img src="https://monogame.net/articles/getting_started/images/vswin_mg_new_2.png" alt="alt text" title="Template"></p>
+<p><img src="https://monogame.net/articles/getting_started/images/vswin_mg_new_2.png" alt="Template"></p>
 <h2 id="other-dev-environments"><strong>OTHER DEV ENVIRONMENTS</strong></h2>
 <p>If you prefer using Jetbrains Rider or Visual Studio Code (Like Myself) we will need to install the .NET SDK
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">Here</a></p>
@@ -70,12 +70,112 @@ I will quickly go through the steps but I highly encourage going through the doc
 <p>Now that you have dotnet installed. You can create a project with the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>    dotnet <span style="color:#66d9ef">new</span> --install MonoGame.Templates.CSharp
 </span></span><span style="display:flex;"><span>    dotnet <span style="color:#66d9ef">new</span> mgdesktopgl -o PixelPlatformer
-</span></span></code></pre></div><p>Where -o is the project directory it will create.</p>
+</span></span></code></pre></div><p>We will be using the opengl template for this tutorial but there are several other templates for different backends.</p>
+<p>Where -o is the project directory it will create.</p>
 <h1 id="project-has-beed-made">Project has beed made</h1>
 <p>Now that you successfully created your project with either VS 2022 Tempplates or via dotnet we will check out the code.</p>
 <p>Firstly the files it created: Most of these we can ignore for now</p>
-<p><img src="filesystem" alt="alt text">
-[filesystem]: D:/blog/quickstart/static/images/pp1/filesystem.png &ldquo;fs&rdquo;</p>
+<p><img src="https://github.com/Ellie-x3/BlogPage/blob/master/static/images/pp1/filesystem.png?raw=true" alt="filesystempng"></p>
+<p>We Will focus on the following</p>
+<ol>
+<li>Content</li>
+<li>Game1.cs</li>
+<li>Program.cs</li>
+</ol>
+<p>The <em>Content</em> folder is where you will find Content.mgcb. This is where we &ldquo;Pack&rdquo; our assets for our game, be it images, sounds, effects, etc&hellip;</p>
+<p>Game1.cs is the bulk of our game code is. This is the entry point for our game.</p>
+<p>Program.cs is the file which will run our game to begin the Game1.cs method calls - We will just be changing the name of our game here.</p>
+<h1 id="preparing-our-game">Preparing our game</h1>
+<p>Lets open the Window!</p>
+<p>To do so we could simply run this as is and it will open a window but we will change a few things first.</p>
+<p>First, open Game1.cs</p>
+<p>Here you will find the initialize function</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> Initialize()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">base</span>.Initialize();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We will add the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> Initialize()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    _graphics.PreferredBackBufferWidth = <span style="color:#ae81ff">1280</span>;
+</span></span><span style="display:flex;"><span>    _graphics.PreferredBackBufferHeight = <span style="color:#ae81ff">720</span>;
+</span></span><span style="display:flex;"><span>    _graphics.ApplyChanges();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">base</span>.Initialize();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This will change the Width &amp; Height of our games window. I use 1920x1080 monitor so I am using 1280x720 for my Window. I recommend for this tutorial
+to stick with a 16:9 ratio window.</p>
+<p>Before we finish up this part we will just rename our project.</p>
+<p>Rename Game1.cs to PixelPlatformer.cs</p>
+<p>And search in this file for any instances of Game1 and replace it with PixelPlatformer. <strong>Do not rename &ldquo;Game&rdquo; Only &ldquo;Game1&rdquo;</strong></p>
+<p>Here is my whole File:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.Xna.Framework;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.Xna.Framework.Graphics;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.Xna.Framework.Input;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> PlatformerTutorial;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PixelPlatformer</span> : Game
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> GraphicsDeviceManager _graphics;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> SpriteBatch _spriteBatch;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> PixelPlatformer()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _graphics = <span style="color:#66d9ef">new</span> GraphicsDeviceManager(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>        Content.RootDirectory = <span style="color:#e6db74">&#34;Content&#34;</span>;
+</span></span><span style="display:flex;"><span>        IsMouseVisible = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> Initialize()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _graphics.PreferredBackBufferWidth = <span style="color:#ae81ff">1280</span>;
+</span></span><span style="display:flex;"><span>        _graphics.PreferredBackBufferHeight = <span style="color:#ae81ff">720</span>;
+</span></span><span style="display:flex;"><span>        _graphics.ApplyChanges();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">base</span>.Initialize();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> LoadContent()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _spriteBatch = <span style="color:#66d9ef">new</span> SpriteBatch(GraphicsDevice);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: use this.Content to load your game content here</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> Update(GameTime gameTime)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+</span></span><span style="display:flex;"><span>            Exit();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: Add your update logic here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">base</span>.Update(gameTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">void</span> Draw(GameTime gameTime)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        GraphicsDevice.Clear(Color.CornflowerBlue);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: Add your drawing code here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">base</span>.Draw(gameTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And Program.cs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> var game = <span style="color:#66d9ef">new</span> PlatformerTutorial.PixelPlatformer();
+</span></span><span style="display:flex;"><span>game.Run();
+</span></span></code></pre></div><p>To now test our &ldquo;Game&rdquo; In VS2022 simply press the Green start arrow in the top center</p>
+<p>For dotnet users, open a terminal in the same directory as the &ldquo;PixelPlatformer.csproj&rdquo; and type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>dotnet run .
+</span></span></code></pre></div><p>If everything worked correctly you should now see a window pop-up with a nice <em>Cornflower</em> blue in our 1280x720 window.</p>
+<p>Thats it for this part in the next part we will cover:</p>
+<ol>
+<li>Going breifly over the main methods in Game1.cs</li>
+<li>Creating a Globals.cs class to handle certain data that will be shared globally accross our game</li>
+<li>Loading our first image using Content.mgcb</li>
+</ol>
+<p>Please join the MonoGame Discord if you have any questions. Please feel free to ping me (Ellie.x3) in my Forum post for this blog. <a href="https://discord.gg/monogame">Discord</a></p>
 </div>
     </div>
 </div>
